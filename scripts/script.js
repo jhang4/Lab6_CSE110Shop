@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   var x = JSON.parse(localStorage.getItem("products"));
 
-  if ((localStorage.getItem("cartItems")== "['']") || (localStorage.getItem("cartItems")==null)) {
+  if ((localStorage.getItem("cartItems") == '[""]') || (localStorage.getItem("cartItems")==null)) {
     var old = [];
   }
   else {
@@ -30,6 +30,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById("product-list").appendChild(prod);
-    document.getElementById('cart-count').innerHTML = old.length;
+    if (old[0] ==""){
+      document.getElementById('cart-count').innerHTML = 0;
+    }
+    else {
+      document.getElementById('cart-count').innerHTML = old.length;
+    }
   }
 });
