@@ -106,7 +106,6 @@ class ProductItem extends HTMLElement {
     if(this.root.getElementById("button").innerText == 'Remove from Cart') {
       var index = items.indexOf(this.id);
       items.splice(index, 1);
-      console.log(items.length);
       document.getElementById('cart-count').innerHTML = items.length;
       this.root.getElementById("button").innerText = 'Add to Cart';
     }
@@ -114,7 +113,6 @@ class ProductItem extends HTMLElement {
       this.root.getElementById("button").innerText = 'Remove from Cart';
       if (items[0] == ""){
         items = [this.id];
-        console.log("arr is empty");
       }
       else {
         items.push(this.id);
